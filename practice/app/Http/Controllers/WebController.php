@@ -13,7 +13,10 @@ class WebController extends Controller
 {
     public function index()
     {
-        return view("home");
-
+        $product = DB::table("table_books")->get();
+        return view("home",[
+                "product" => $product
+            ]
+        );
     }
 }
